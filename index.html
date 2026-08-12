@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>10秒タイマー</title>
+  <title>20分タイマー</title>
 
   <style>
     body {
@@ -39,14 +39,14 @@
 
 <body>
 
-  <div id="timer">00:10</div>
+  <div id="timer">20:00</div>
 
   <button onclick="startTimer()">スタート</button>
   <button onclick="pauseTimer()">一時停止</button>
   <button onclick="resetTimer()">リセット</button>
 
   <script>
-    let totalSeconds = 10;
+    let totalSeconds = 20 * 60;
     let interval = null;
 
     function displayTime() {
@@ -76,7 +76,7 @@
       );
 
       gainNode.gain.setValueAtTime(
-        0.25,
+        0.6,
         audioContext.currentTime
       );
 
@@ -114,7 +114,7 @@
     function resetTimer() {
       clearInterval(interval);
       interval = null;
-      totalSeconds = 10;
+      totalSeconds = 20 * 60;
       displayTime();
     }
 
